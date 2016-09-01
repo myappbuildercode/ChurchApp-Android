@@ -1,0 +1,45 @@
+<ion-view>
+	<ion-nav-title>
+        {{mainbuttontitle | capitalize}}
+    </ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back nav-icon" ng-click="backslideredit()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <form  ng-submit="updateslidertext()">
+            <label class="item item-input">
+                <input type="text" ng-model="updateslidervalues.title">
+                    </label>
+            
+            
+            <textarea style="height:30%;"  ng-model="updateslidervalues.text" ui-tinymce="tinymceOptions" id="chktxtarea"></textarea>
+            
+            <button type="submit" class="button button-full button-positive" on-touch="updateslidertext()">
+                Update
+            </button>
+        </form>
+        
+        <div align="center" ng-click="showActionsheet();">
+            <img src="img/btn_image.png"  id="selectedimage" style="width:114px;height:114px;" />
+        </div>
+        
+        <div class="button button-full button-positive" on-touch="addslideimages()">
+            Add Image
+        </div>
+        <div class="list">
+            <div ng-repeat="item in imagedeletearray">
+                <div class="row">
+                    <div class="col">
+                        <img src={{item.url}} style="width:100%;height:auto;max-height: 20%;"/>
+                    </div>
+                    
+                    <div class="col">
+                        <button class="button button-assertive button-outline" on-touch="deletesliderimage(item.id);" style="margin-top:8.5%;left:58%;">
+                            <i class="icon ion-trash-a " ></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+    </ion-content>
+  </ion-view>

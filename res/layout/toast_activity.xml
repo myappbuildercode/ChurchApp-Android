@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toast_rl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp" >
+
+    <RelativeLayout
+        android:id="@+id/add_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/toast"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/icon" />
+
+        <TextView
+            android:id="@+id/toast_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/img_toast"
+            android:paddingBottom="5dp"
+            android:paddingLeft="27dp"
+            android:paddingRight="12dp"
+            android:paddingTop="5dp"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textColor="#4a87ee"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+</RelativeLayout>

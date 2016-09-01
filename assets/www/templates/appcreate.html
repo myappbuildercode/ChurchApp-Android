@@ -1,0 +1,30 @@
+
+
+<ion-view view-title="Create New App">
+    <ion-nav-buttons side="left">
+        
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+                <i class="icon ion-ios-close-outline custom-addapp" ui-sref="home"></i>
+    </ion-nav-buttons>
+            <ion-content class="padding">
+                <form ng-submit="login();">
+                    <div class="list list-inset">
+                        <label class="item item-input">
+                            <input type="text" ng-model="loginvalues.appname" placeholder="Appname">
+                        </label>
+                        <label class="item item-input">
+                            <input type="text" ng-model="loginvalues.username" placeholder="User Name">
+                        </label>
+                        <label class="item item-input">
+                            <input type="password" ng-model="loginvalues.password" placeholder="Password">
+                        </label>
+                    </div>
+                    <button type="submit" class="button button-full button-positive">
+                        Create App
+                    </button>
+                </form>
+            </ion-content>
+        
+</ion-view>
+

@@ -1,0 +1,44 @@
+
+
+<ion-view view-title="Login">
+    <!-- <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon nav-icon" ng-click="toggleLeftSideMenu()"></button>
+    </ion-nav-buttons> -->
+
+    <ion-nav-buttons side="left">
+       <button  class="button button-icon icon ion-android-arrow-back nav-icon" ng-click="backlogin()"></button>
+    </ion-nav-buttons>
+    <ion-side-menus>
+        <ion-side-menu-content>
+            
+            <ion-content class="padding">
+                <form ng-submit="login();">
+                    <div class="list list-inset">
+                        <label class="item item-input" style="background:none;">
+                            <input type="text" ng-model="loginvalues.username" placeholder="User Name">
+                        </label>
+                        <label class="item item-input" style="background:none;">
+                            <input type="password" ng-model="loginvalues.password" placeholder="Password">
+                        </label>
+                    </div>
+                    <button type="submit" class="button button-full button-positive">
+                        Login
+                    </button>
+                </form>
+            </ion-content>
+        </ion-side-menu-content>
+        
+        <ion-side-menu side="left">
+            <ion-header-bar class="bar-stable">
+                <h1 class="title">Menu List</h1>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                   
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+    
+</ion-view>
+

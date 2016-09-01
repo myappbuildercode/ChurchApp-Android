@@ -1,0 +1,138 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive custom-dark">
+        <h1 class="title">{{mainbuttontitle  | capitalize}}</h1>
+      <div class="buttons">
+          <button class="button button-icon ion-close-circled nav-icon" ng-click="closechoosemodal();"></button>
+      </div>
+    </ion-header-bar>
+    <ion-header-bar class="bar bar-subheader"  style="background-color:#fee8c1;">
+    <h4>Choose any one template type</h4>
+    </ion-header-bar>
+    
+    <ion-content class="padding">
+    <!-- <div class="list">
+        
+
+  <label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Slider with address">
+    <div class="item-content">
+      Slider with address
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Images and Text">
+        <div class="item-content">
+            Images and Text
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Text list">
+        <div class="item-content">
+            Text list
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Images with Description in List">
+        <div class="item-content">
+            Images with Description in List
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+
+
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Images">
+        <div class="item-content">
+            Images
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Videos with Description">
+        <div class="item-content">
+            Videos with Description
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+</div> -->
+
+    
+<div class="list">
+  <label class="item item-radio" style="background-color:#fee8c1;">
+    <input type="radio" ng-model="pagesvalue.name" value="Slider with address">
+    <div class="item-content">
+      Image Slider with Address
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Images and Text">
+        <div class="item-content">
+            Images with Text
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Text list">
+        <div class="item-content">
+            List Type
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Bible quotes">
+        <div class="item-content">
+            Bible Quotes
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Images with Description in List">
+        <div class="item-content">
+            Images with Description in List
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+
+
+
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Images">
+        <div class="item-content">
+            Only Images
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Videos with Description">
+        <div class="item-content">
+            Video with Description
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+<label class="item item-radio">
+    <input type="radio" ng-model="pagesvalue.name" value="Donation">
+        <div class="item-content">
+            Donation Page
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+</label>
+</div>
+
+
+
+    <button class="button button-full button-positive" on-touch="choosepage(pagesvalue.name);">
+        Submit
+    </button>
+    </ion-content>
+  </ion-modal-view>

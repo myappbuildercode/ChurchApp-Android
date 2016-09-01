@@ -1,0 +1,23 @@
+<ion-view>
+<ion-nav-title>
+        {{mainbuttontitle | capitalize}}
+</ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back nav-icon" ng-click="backimageanddescriptionlisteditpage()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+     
+        <label class="item item-input">
+            <input type="text" ng-model="imagewithdescriptioneditvalues.title">
+        </label><br />
+        <div align="center" on-touch="showActionsheet();">
+            <img src="img/btn_image.png" id="selectedimage" style="width:114px;height:114px;" />
+        </div>
+            <textarea  ng-model="imagewithdescriptioneditvalues.text" ui-tinymce="tinymceOptions">
+            </textarea>
+            <button class="button button-full button-positive" on-touch="imagewithdescriptionlistedit();">
+                Update
+            </button>
+    </ion-content>
+   
+  </ion-view>

@@ -1,0 +1,25 @@
+<ion-view>
+	<ion-nav-title>
+        {{mainbuttontitle | capitalize}}
+    </ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back nav-icon" ng-click="backbiblequotesaddpage()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        
+        
+        
+        <form>
+            <label class="item item-input">
+                <input type="text" ng-model="biblequoteseditvalues.title">
+                    </label>
+            
+            
+            <textarea style="height:30%;"  ng-model="biblequoteseditvalues.text" ui-tinymce="tinymceOptions"></textarea>
+            
+            <button type="submit" class="button button-full button-positive" on-touch="editbiblequotescontent()">
+                Create
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

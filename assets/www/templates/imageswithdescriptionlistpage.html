@@ -1,0 +1,223 @@
+
+
+<ion-view>
+    <ion-nav-title>
+        {{mainbuttontitle}}
+    </ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon nav-icon" on-touch="toggleLeftSideMenu()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <!--        <button class="button button-icon ion-more" ng-click="openPopoversermons($event)"></button>-->
+    </ion-nav-buttons>
+    <ion-side-menus>
+        <ion-side-menu-content style="background-color:#fee8c1;">
+            
+    <ion-content>
+        <ion-list ng-show="imageanddescriptionlists">
+        <ion-item ng-repeat="item in $root.buttoncontent.elements" class="item item-text-wrap">
+            <img  ng-src="{{item.images[0].url}}" style="width:100%;height:auto;max-height: 25%;">
+                <h3 style="color:#666;"> {{item.title}} </h3>
+                <p  ng-bind-html="item.text" style="text-align: justify;
+    text-justify: inter-word;"></p>
+                
+               
+                
+        </ion-item>
+        </ion-list>
+        
+        <ion-list ng-show="imageanddescriptiondeletebutton">
+            <ion-item ng-repeat="item in $root.buttoncontent.elements" class="item item-text-wrap" ng-click="deletethisimageanddescriptioncontent(item);">
+                <img  ng-src="{{item.images[0].url}}" style="width:100%;height:auto;max-height: 25%;">
+                    <div class="row">
+                        <div class="col col-90">
+                    <h3 style="color:#666;"> {{item.title}} </h3>
+                    <p  ng-bind-html="item.text" style="text-align: justify;
+    text-justify: inter-word;"></p>
+                    </div>
+                    <div class="col col-10">
+                    <i class="icon ion-trash-a custom-icon"></i>
+                    </div>
+                    </div>
+                    </ion-item>
+        </ion-list>
+        
+        <ion-list ng-show="iflogin">
+            <ion-item ng-repeat="item in $root.buttoncontent.elements" class="item item-text-wrap">
+            <img  ng-src="{{item.images[0].url}}" style="width:100%;height:auto;max-height: 25%;">
+                <h3 style="color:#666;"> {{item.title}} </h3>
+                <p  ng-bind-html="item.text" style="text-align: justify;
+    text-justify: inter-word;"></p>
+                    <div class="row">
+                            <div class="col col-50">
+                            </div>
+                            <div class="col col-10">
+                            </div>
+                            <div class="col col-20" ng-click="deletethisimageanddescriptioncontent(item);">
+                             
+                             <button class="button button-assertive button-clear">
+                            	<i class="icon ion-trash-a" ></i>
+                        	</button>
+                            </div>
+                            <div class="col col-20" ng-click="editthisimageanddescriptioncontent(item);">
+                           
+                             <button class="button button-assertive button-clear">
+                            	<i class="icon ion-edit" ></i>
+                        	</button>
+                            </div>
+                    </div>
+               
+                
+        </ion-item>
+        </ion-list><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </ion-content>
+            <div class="bar bar-footer" style="background:none;margin-bottom:2.8%;" ng-show="iflogin">
+                
+                <div class="row" style="margin-right:7%;">
+                    <div class="col col-20">
+                        <button class="button button-small ion-ios7-plus-outline button-positive" ng-click="addimagewithdescriptionpagego()" style="margin-top:4px;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;
+                        </button>
+                    </div>
+                    <div class="col col-20"></div>
+                    <div class="col col-20">
+                        <!--<button class="button button-small ion-ios7-plus-outline button-royal" ng-click="deleteimageanddescriptionlist()" style="margin-top:4px;">
+                            &nbsp;&nbsp;Delete&nbsp;&nbsp;
+                        </button>-->
+                    </div>
+                    <div class="col col-20"></div>
+                    <div class="col col-20">
+                        <!--<button class="button button-small ion-ios7-plus-outline button-positive" ng-click="editthisimageanddescriptionlist()" style="margin-top:4px;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;&nbsp;
+                        </button>-->
+                    </div>
+                </div>
+                
+               
+            </div>
+            <div class="bar bar-footer" ng-show="ifnotlogin"> 
+               <h2 class="title">
+               <img src="img/myappbuilder.png" alt="" style="width:110px;height:40px;"/>
+               </h2>
+            </div>
+        </ion-side-menu-content>
+        
+        <ion-side-menu side="left" style="background-color:#fee8c1;">
+            
+            <ion-content class="has-subfooter">
+                <ion-list ng-show="mainmenus">
+                    <ion-item menu-close ng-click="clickmainmenu(items);" ng-repeat="items in $root.allbuttons">
+                        <div class="row">
+                            <div class="col col-90">
+                                {{items.title}}
+                            </div>
+                            <div class="col col-10" ng-if="$root.mainbuttonid==items.id">
+                                <i class="icon ion-ios-circle-filled custom-selectmainmenu"></i>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+                
+                <ion-list ng-show="deletemenus">
+                    <ion-item menu-close ng-click="deletethisbutton(items);" ng-repeat="items in $root.allbuttons">
+                        <div class="row">
+                            <div class="col col-90">
+                                {{items.title}}
+                            </div>
+                            <div class="col col-10">
+                                <i class="icon ion-trash-a custom-icon"></i>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+                <ion-list ng-show="editmenus">
+                    <ion-item menu-close  ng-repeat="items in $root.allbuttons" ng-click="editthisbutton(items)">
+                        
+                        <div class="row">
+                            <div class="col col-90">
+                                {{items.title}}
+                            </div>
+                            <div class="col col-10">
+                                <i class="icon ion-edit custom-icon"></i>
+                            </div>
+                            
+                        </div>
+                    </ion-item>
+                </ion-list>
+                
+                
+                
+                
+                <ion-list ng-show="reordermenus" show-reorder="true">
+                    <ion-item menu-close  ng-repeat="items in $root.allbuttons">
+                        
+                        <div class="row">
+                            <div class="col col-90" ng-click="editthisbutton(items)">
+                                {{items.title}}
+                            </div>
+                            
+                            <div class="col col-10">
+                                <ion-reorder-button class="ion-navicon"
+                                    on-reorder="moveItem(items, $fromIndex, $toIndex)">
+                                </ion-reorder-button>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+            
+            
+            <div class="bar bar-subfooter" ng-show="iflogin">
+                <div class="row" style="padding:0;">
+                    <div style="width:45%;">
+                        <button class="button button-small ion-ios-plus-outline button-positive" style="width:100%;" ng-click="addbutton();">&nbsp;Add Menu</button>
+                    </div>
+                    <div style="width:10%;"></div>
+                    <div style="width:45%;">
+                        <button class="button button-small ion-log-in button-positive" style="width:100%;" on-touch="logout();">&nbsp;Log Out</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="bar bar-subfooter" ng-show="ifloginwithreorder">
+                <div class="row" style="padding:0;">
+                    <div style="width:45%;">
+                        <button class="button button-small ion-ios-drag button-positive" style="width:100%;" ng-click="reorder();">&nbsp;Reorder Menu</button>
+                    </div>
+                    <div style="width:10%;"></div>
+                    <div style="width:45%;">
+                        <button class="button button-small ion-log-in button-positive" style="width:100%;" on-touch="logout();">&nbsp;Log Out</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bar bar-footer" ng-show="iflogin">
+                <div class="row" style="padding:0;">
+                    <div style="width:45%;">
+                        <button class="button button-small ion-edit button-positive" style="width:100%;" ng-click="editbuttons();">&nbsp;Edit Menu</button>
+                    </div>
+                    <div style="width:10%;"></div>
+                    <div style="width:45%;">
+                        <button class="button button-small ion-ios-close-outline button-positive" style="width:100%;" on-touch="deletebuttons();">&nbsp;Delete Menu</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bar bar-footer" ng-show="ifnotlogin">
+                <div class="row" style="padding:0;">
+                    <div style="width:45%;">
+                        <button class="button button-small ion-log-in button-positive" style="width:100%;" on-touch="gologin();">&nbsp;Log In</button>
+                    </div>
+                    <div style="width:10%;"></div>
+                    <div style="width:45%;">
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </ion-side-menu>
+    </ion-side-menus>
+    
+</ion-view>
+

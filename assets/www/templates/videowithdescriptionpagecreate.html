@@ -1,0 +1,28 @@
+<ion-view>
+	<ion-nav-title>
+        {{mainbuttontitle | capitalize}}
+    </ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back nav-icon" ng-click="backvideowithdescriptioncreate()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <label class="item item-input">
+            <input type="text" placeholder="Enter Title" ng-model="videowithdescriptioncreatevalues.title">
+        </label><br />
+        <div align="center">
+            <button class="button button-full button-positive" ng-click="choosevideo()" ng-disabled="beforevideoupload"/>Video</button>
+            <input type="file" id="video" ng-model="videowithdescriptioncreatevalues.video" style="visibility: hidden;" /><br />
+            <!--<button class="button button-full button-positive" ng-click="choosevideo()" />Videothumb</button>-->
+            <input type="file" id="videothumb" ng-model="videowithdescriptioncreatevalues.videothumb" style="visibility: hidden;" />
+<!--            <input type="file" id="video" ng-model="videowithdescriptioncreatevalues.video"><br />-->
+<!--            <input type="file" id="videothumb" ng-model="videowithdescriptioncreatevalues.videothumb">-->
+
+        </div>
+        
+            <textarea  ng-model="videowithdescriptioncreatevalues.text" ui-tinymce="tinymceOptions">
+            </textarea>
+            <button class="button button-full button-positive" on-touch="videowithdescriptioncreate();" ng-disabled="beforevideoupload">
+                Create
+            </button>
+    </ion-content>
+  </ion-view>

@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/asample_viewvideo"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_audiowindow" >
+
+    <Button
+        android:id="@+id/avideo_clsbtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/btn_autoclose" />
+
+    <VideoView
+        android:id="@+id/avideo_view"
+        android:layout_below="@+id/avideo_clsbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    
+    <MediaController 
+        android:id="@+id/avideo_controller"
+        android:layout_below="@+id/avideo_view"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
